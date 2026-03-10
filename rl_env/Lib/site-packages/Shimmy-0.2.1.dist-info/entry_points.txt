@@ -1,0 +1,2 @@
+[gymnasium.envs]
+__root__ = shimmy.registration:register_gymnasium_envs
