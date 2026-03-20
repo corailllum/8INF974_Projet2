@@ -254,11 +254,11 @@ class MCTSNode:
         )
         return exploitation + exploration
 
-    # ── Nœud totalement développé ? ──────────────────────────
+    # ── Nœud totalement développé  ──────────────────────────
     def is_fully_expanded(self) -> bool:
         return len(self.untried_actions) == 0
 
-    # ── Nœud terminal (fin de partie) ? ──────────────────────
+    # ── Nœud terminal (fin de partie)  ──────────────────────
     def is_terminal(self) -> bool:
         return self.state._is_game_over()
 
@@ -314,7 +314,7 @@ class MCTS:
         return best_child.action
 
     # ─────────────────────────────────────────────────────────
-    #  ① SÉLECTION
+    #   SÉLECTION
     # ─────────────────────────────────────────────────────────
     def _select(self, node: MCTSNode) -> MCTSNode:
         """
@@ -337,7 +337,7 @@ class MCTS:
         return node  # Nœud terminal
 
     # ─────────────────────────────────────────────────────────
-    #  ② EXPANSION
+    #   EXPANSION
     # ─────────────────────────────────────────────────────────
     def _expand(self, node: MCTSNode) -> MCTSNode:
         """
@@ -358,7 +358,7 @@ class MCTS:
         return child
 
     # ─────────────────────────────────────────────────────────
-    #  ③ SIMULATION (Rollout)
+    #   SIMULATION (Rollout)
     # ─────────────────────────────────────────────────────────
     def _simulate(self, node: MCTSNode) -> float:
         """
@@ -387,7 +387,7 @@ class MCTS:
         return sim_env._final_reward(from_player=player_at_root)
 
     # ─────────────────────────────────────────────────────────
-    #  ④ RÉTROPROPAGATION
+    #   RÉTROPROPAGATION
     # ─────────────────────────────────────────────────────────
     def _backpropagate(self, node: MCTSNode, result: float):
         """
@@ -472,13 +472,13 @@ def play_game(
     print(f"  FIN DE PARTIE  —  Noirs: {blacks}  Blancs: {whites}")
 
     if blacks > whites:
-        print("  🏆 Victoire des NOIRS !")
+        print("   Victoire des NOIRS !")
         return BLACK
     elif whites > blacks:
-        print("  🏆 Victoire des BLANCS !")
+        print("   Victoire des BLANCS !")
         return WHITE
     else:
-        print("  🤝 Égalité !")
+        print("   Égalité !")
         return 0
 
 

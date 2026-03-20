@@ -52,9 +52,6 @@ DIRECTIONS  = [(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)]
 MODEL_PATH  = "mcts_model.json"   # Fichier de sauvegarde
 
 
-# ═════════════════════════════════════════════════════════════
-#  UTILITAIRES CONSOLE
-# ═════════════════════════════════════════════════════════════
 
 def progress_bar(current: int, total: int, prefix: str = "", width: int = 40) -> str:
     """
